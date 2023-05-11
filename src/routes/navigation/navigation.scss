@@ -1,0 +1,45 @@
+.navigation {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 25px;
+
+    .logo-container {
+        height: 100%;
+        width: 70px;
+        padding: 10px;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+
+        .logo {
+            width: 80%;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: black
+        }
+    }
+
+    .nav-links-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: c;
+
+
+        .nav-link {
+            padding: 10px 15px;
+            margin-right: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
