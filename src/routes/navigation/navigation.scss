@@ -4,12 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0 25px;
+    padding: 5px 0px;
+    margin: 0px 0 5px;
+    border-bottom: solid rgb(192, 190, 190) 0.5px;
 
     .logo-container {
         height: 100%;
         width: 70px;
-        padding: 10px;
+        padding: 15px;
         display: flex;
         text-decoration: none;
         align-items: center;
@@ -26,20 +28,39 @@
     }
 
     .nav-links-container {
-        width: 50%;
-        height: 100%;
+        padding-right: 25px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        text-align: c;
+        text-align: center;
+        font-weight: 700;
 
 
         .nav-link {
-            padding: 10px 15px;
+            position: relative;
+            padding: 10px 10px;
             margin-right: 5px;
             cursor: pointer;
             text-decoration: none;
             color: black;
+        }
+
+        .nav-link:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: black;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+            left: 0;
         }
     }
 }

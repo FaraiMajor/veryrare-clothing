@@ -1,4 +1,6 @@
 import CategoryItem from '../category-item/category-item';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 import './directory.scss';
 

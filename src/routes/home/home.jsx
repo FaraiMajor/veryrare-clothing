@@ -1,6 +1,9 @@
+import React from 'react';
+import Slider from '../../components/slideshow/slider';
 import { Outlet } from 'react-router-dom';
 
 import Directory from '../../components/directory/directory';
+import './home.scss'
 
 const Home = () => {
     const categories = [
@@ -33,6 +36,15 @@ const Home = () => {
 
     return (
         <>
+            <div className='banner-container'>
+                {/* <img className='banner-image' src={Banner} /> */}
+                <Slider className='slider' />
+                <div className='category-body-container'>
+                    <h2>Best Collection in the Whole World</h2>
+                    <span>It’s time to step outside your color comfort zone. Our collection is truly our of this world</span>
+                    <p>Shop Now</p>
+                </div>
+            </div >
             <Directory categories={categories} />;
             <Outlet />
         </>
