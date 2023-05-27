@@ -10,14 +10,14 @@
     border-bottom-right-radius: 5px;
     background-color: white;
     top: 80px;
-    right: 20px;
+    right: 10px;
     z-index: 5;
 
     .cart-items {
-        height: 240px;
+        height: 290px;
         display: flex;
         flex-direction: column;
-        overflow: scroll;
+        overflow: auto;
     }
 
     button {
