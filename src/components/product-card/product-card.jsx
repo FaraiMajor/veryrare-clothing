@@ -24,6 +24,7 @@ const ProductCard = ({ product }) => {
             </Button>
         </div>
     );
+
 };
 
 export default ProductCard;
