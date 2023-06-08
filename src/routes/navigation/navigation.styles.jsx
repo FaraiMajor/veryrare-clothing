@@ -1,4 +1,7 @@
-.navigation {
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const NavigationContainer = styled.div`
     height: 70px;
     width: 100%;
     display: flex;
@@ -7,8 +10,8 @@
     padding: 5px 0px;
     margin: 0px 0 5px;
     border-bottom: solid rgb(192, 190, 190) 0.5px;
-
-    .logo-container {
+`;
+export const LogoContainer = styled(Link)`
         height: 100%;
         width: 70px;
         padding: 15px;
@@ -25,27 +28,26 @@
             font-weight: 600;
             color: black
         }
-    }
+`;
 
-    .nav-links-container {
+export const NavLinks = styled.div`
         padding-right: 25px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         text-align: center;
         font-weight: 600;
+`;
 
+export const NavLink = styled(Link)`
+        position: relative;
+        padding: 10px 10px;
+        margin-right: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
 
-        .nav-link {
-            position: relative;
-            padding: 10px 10px;
-            margin-right: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            color: black;
-        }
-
-        .nav-link:after {
+        &:after {
             background: none repeat scroll 0 0 transparent;
             bottom: 0;
             content: "";
@@ -58,9 +60,8 @@
             width: 0;
         }
 
-        .nav-link:hover:after {
+        &:hover:after {
             width: 100%;
             left: 0;
         }
-    }
-}
+`;

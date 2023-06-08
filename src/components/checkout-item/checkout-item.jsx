@@ -9,12 +9,19 @@ import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-import './checkout-item.scss'
+import {
+    CheckoutItemContainer,
+    ImageContainer,
+    BaseSpan,
+    Quantity,
+    Value,
+    RemoveButton,
+} from './checkout-item.styles';
 
 const CheckoutItem = ({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
 
-    const { clearItemFromCart, addItemToCart, removeItemToCart, cartTotal } =
+    const { clearItemFromCart, addItemToCart, removeItemToCart } =
         useContext(CartContext);
 
     const clearItemHandler = () => clearItemFromCart(cartItem);
@@ -22,12 +29,12 @@ const CheckoutItem = ({ cartItem }) => {
     const removeItemHandler = () => removeItemToCart(cartItem);
 
     return (
-        <div className="checkout-item-container">
-            <div className='image-container'>
+        <CheckoutItemContainer >
+            <ImageContainer>
                 <img src={imageUrl} alt={`${name}`} />
-            </div>
-            <span className="name">{name}</span>
-            <span className="quantity">
+            </ImageContainer>
+            <BaseSpan>{name}</BaseSpan>
+            <Quantity>
                 <Badge color="secondary" badgeContent={quantity}>
                     <ShoppingCartIcon />{" "}
                 </Badge>
@@ -42,18 +49,13 @@ const CheckoutItem = ({ cartItem }) => {
                         <RemoveIcon fontSize="small" />
                     </Button>
                 </ButtonGroup>
-            </span>
-            <span className="price">${price}</span>
-            {/* <div className="prices">
-
-
-                <span>Total ${cartTotal}</span>
-            </div> */}
-            <div className="remove-button" onClick={clearItemHandler}>
+            </Quantity>
+            <BaseSpan>${price}</BaseSpan>
+            <RemoveButton onClick={clearItemHandler}>
                 &#10005;
-            </div>
+            </RemoveButton>
 
-        </div>
+        </CheckoutItemContainer >
     )
 
 }
