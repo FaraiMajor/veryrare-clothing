@@ -7,8 +7,6 @@ import {
     createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
-import { UserContext } from "../../contexts/user.context";
-
 import { SignUpContainer } from "./signup-form.styles";
 
 const defaultFormFields = {

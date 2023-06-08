@@ -7,4 +7,11 @@
         width: fit-content;
         height: 100%;
     }
+
+    @media screen and (max-width: 800px) {
+
+        .img {
+            display: none;
+        }
+    }
 }

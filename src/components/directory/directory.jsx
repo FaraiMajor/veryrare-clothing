@@ -6,7 +6,7 @@ import DirectoryItem from '../directory-item/directory-item'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-import './directory.scss';
+import { DirectoryContainer, BannerContainer, CategoryBodyContainer } from './directory.styles';
 
 const categories = [
     {
@@ -49,20 +49,19 @@ const Directory = () => {
 
     return (
         <>
-            <div className='banner-container'>
-                {/* <img className='banner-image' src={Banner} /> */}
+            <BannerContainer>
                 <Slider className='slider' />
-                <div className='category-body-container'>
+                <CategoryBodyContainer>
                     <h2>Best Collection in the Whole World</h2>
                     <span>It’s time to step outside your color comfort zone. Our collection is truly our of this world</span>
                     <p onClick={goToShopHandler}>Shop Now</p>
-                </div>
-            </div >
-            <div className='directory-container'>
+                </CategoryBodyContainer>
+            </BannerContainer >
+            <DirectoryContainer>
                 {categories.map((category) => (
                     <DirectoryItem key={category.id} category={category} />
                 ))}
-            </div>
+            </DirectoryContainer>
         </>
     );
 };
