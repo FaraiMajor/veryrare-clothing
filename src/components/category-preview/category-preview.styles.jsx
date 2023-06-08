@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export const CategoryPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 15px 30px;
+  margin: 0 15px 50px;
 
   @media screen and (max-width: 800px) {
     display: flex;
@@ -33,9 +33,10 @@ export const Title = styled(Link)`
 `;
 
 export const Preview = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
 
   @media screen and (max-width: 800px) {
     grid-template-columns: 1fr 1fr;

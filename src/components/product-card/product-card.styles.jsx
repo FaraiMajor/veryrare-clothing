@@ -36,7 +36,7 @@ export const ProductCartContainer = styled.div`
     
 
     @media screen and (max-width: 800px) {
-        width: 40vw;
+        width: 45vw;
         
         button {
             display: block;
@@ -68,13 +68,27 @@ export const Footer = styled.div`
         display: flex;
         justify-content: space-between;
         font-size: 18px;
+
+        @media screen and (max-width: 800px) {
+            width: 40vw;
+            margin-bottom: 10px
+        }
 `;
 export const Name = styled.span`
+        width: 90%;
+        margin-bottom: 15px;
+        @media screen and (max-width: 800px) {
             width: 90%;
-            margin-bottom: 15px;
+        }
+            
         `;
 
 export const Price = styled.span`
-            font-weight: 600;
-            width: 10%;
+        font-weight: 600;
+        width: 10%;
+
+          @media screen and (max-width: 800px) {
+            width: 30%;
+          }
+          
 `;
