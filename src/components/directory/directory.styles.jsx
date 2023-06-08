@@ -60,7 +60,7 @@ export const CategoryBodyContainer = styled.div`
         }
     }
     @media screen and (max-width: 800px) {
-        padding: 2px;
+        padding: 10px 20px;
         margin-bottom: 0;
 
         h2{

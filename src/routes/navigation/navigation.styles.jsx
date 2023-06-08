@@ -10,6 +10,14 @@ export const NavigationContainer = styled.div`
     padding: 5px 0px;
     margin: 0px 0 5px;
     border-bottom: solid rgb(192, 190, 190) 0.5px;
+
+    @media screen and (max-width: 800px) {
+        width: 100%
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
 `;
 export const LogoContainer = styled(Link)`
         height: 100%;
@@ -28,6 +36,13 @@ export const LogoContainer = styled(Link)`
             font-weight: 600;
             color: black
         }
+
+        @media screen and (max-width: 800px) {
+
+            .logo-text{
+                display: none;
+            }
+          }
 `;
 
 export const NavLinks = styled.div`

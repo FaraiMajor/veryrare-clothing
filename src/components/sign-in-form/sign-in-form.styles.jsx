@@ -7,6 +7,11 @@ export const SignInContainer = styled.div`
     
     h2{
     margin: 10px 0;
+
+    @media screen and (max-width: 800px) {
+        // width: 350px;
+
+    }
 }
 `;
 export const ButtonsContainer = styled.div`
@@ -15,6 +20,11 @@ export const ButtonsContainer = styled.div`
 
     Button {
     margin-right: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    width: 365px;
+
 }
 `;
 
