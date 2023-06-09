@@ -70,25 +70,17 @@ export const Footer = styled.div`
         font-size: 18px;
 
         @media screen and (max-width: 800px) {
-            width: 40vw;
-            margin-bottom: 10px
+            width: 100%;
+            margin-bottom: 10px            
         }
 `;
 export const Name = styled.span`
         width: 90%;
         margin-bottom: 15px;
-        @media screen and (max-width: 800px) {
-            width: 90%;
-        }
             
         `;
 
 export const Price = styled.span`
         font-weight: 600;
-        width: 10%;
-
-          @media screen and (max-width: 800px) {
-            width: 30%;
-          }
-          
+        // width: 10%;          
 `;
