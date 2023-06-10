@@ -21,6 +21,30 @@ export const Title = styled(Link)`
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    position: relative;
+    padding: 10px 10px;
+    margin-right: 5px;
+    // cursor: pointer;
+    // text-decoration: none;
+    color: black;
+
+    &:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: black;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }        
+
+    &:hover:after {
+        width: 100%;
+        left: 0;
+        }
 
     @media screen and (max-width: 800px) {
       font-size: 35px;
