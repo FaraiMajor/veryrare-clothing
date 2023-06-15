@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from 'react';
+import { createAction } from '../utils/reducer/reducer.utils';
 
 import {
     onAuthStateChangedListener,
@@ -19,8 +20,6 @@ const INITIAL_STATE = {
 };
 
 const userReducer = (state, action) => {
-    console.log('dispatched')
-    console.log(action)
     const { type, payload } = action;
 
     switch (type) {
@@ -36,7 +35,7 @@ export const UserProvider = ({ children }) => {
     console.log('mhata ' + currentUser)
 
     const setCurrentUser = (user) =>
-        dispatch({ type: USER_ACTION_TYPES.SET_CURRENT_USER, payload: user });
+        dispatch(createAction(USER_ACTION_TYPES.SET_CURRENT_USER, user));
 
     useEffect(() => {
         const unsubscribe = onAuthStateChangedListener((user) => {

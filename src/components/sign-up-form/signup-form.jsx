@@ -90,6 +90,8 @@ const SignUpForm = () => {
                         onChange: handleChange,
                         name: 'password',
                         value: password,
+                        pattern: "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}",
+                        title: "Must contain at least one number, one uppercase and lowercase letter,special character and at least 8 or more characters",
                     }}
                 />
 
@@ -101,6 +103,8 @@ const SignUpForm = () => {
                         onChange: handleChange,
                         name: 'confirmPassword',
                         value: confirmPassword,
+                        pattern: "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,24}",
+                        title: "Must contain at least one number, one uppercase and lowercase letter,special character and at least 8 or more characters",
                     }}
                 />
                 <Button type='submit'>Sign Up</Button>
