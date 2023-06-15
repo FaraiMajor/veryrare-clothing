@@ -13,14 +13,13 @@ import {
     getFirestore,
     doc,
     getDoc,
-    getDocs,
     setDoc,
     collection,
     writeBatch,
     query,
+    getDocs,
 } from 'firebase/firestore';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyB2OvZSucTHLWwxCkE2F7L0pC5sk-6tyys",
     authDomain: "very-rare-db.firebaseapp.com",
@@ -30,7 +29,6 @@ const firebaseConfig = {
     appId: "1:440927320269:web:b77685b3fe00a5de275184"
 };
 
-// Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
@@ -40,19 +38,20 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
-
 export const signInWithGooglePopup = () =>
     signInWithPopup(auth, googleProvider);
-
 export const signInWithGoogleRedirect = () =>
     signInWithRedirect(auth, googleProvider);
 
 export const db = getFirestore();
 
-// adding data to firebase and creating a collection
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
-    const batch = writeBatch(db);
+export const addCollectionAndDocuments = async (
+    collectionKey,
+    objectsToAdd,
+    field
+) => {
     const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
 
     objectsToAdd.forEach((object) => {
         const docRef = doc(collectionRef, object.title.toLowerCase());
@@ -63,7 +62,6 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
     console.log('done');
 };
 
-// get data from firebase db
 export const getCategoriesAndDocuments = async () => {
     const collectionRef = collection(db, 'categories');
     const q = query(collectionRef);
