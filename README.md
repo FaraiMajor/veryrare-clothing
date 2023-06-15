@@ -1,9 +1,10 @@
 # Very Rare Clothing
 
-This application creates "monster" cards with monster picutres, and user names as well as emails by connecting to two APIs. There is also a search bar which can be used to filter and search for the monsters by name.
-### :camera: Screenshot
+Very Rare is the Fully functional Real custom made Web application that covers and entire E-commerece functionality from designing, User Authentication till Payments build using React JS, Firebase and Stripe.
 
-![screenshot](src/rolodex.png)
+### :camera: A demo of the Web App
+
+![screenshot](src/veryrare.gif)
 
 ## Features
 As a user you can
@@ -13,16 +14,23 @@ As a user you can
 - Add and remove them from Cart
 - proceed to checkout page to buy the product
 - create orders and Make payments
-- View Order history and details
+
 
 ## :hammer: Technologies & Tool
+[![Technologies](https://skills.thijs.gg/icons?i=react,git,firebase,styledcomponents,netlify)](https://skills.thijs.gg)
 
-- React.JS
-- Stripe
-- Firebase
-- ContextAPI
-- Styled Components
+## Project Structure
 
+Project consist of following stages:
+
+- Setting up a react Router
+- creating the Navigation bar
+- Creating the home Page  – to display categories
+- Setting up a React Context API – The Context API is a component structure provided by the React framework, which enables us to share specific states across all levels of the application. In this project, there is need to manage three states: cart (to manage the shopping cart),categories(for managing each category data)  and user (for managing the details of the currently logged in user).
+- Setting up payment functionality using API’s provided by Stripe(Stripe is an online payment processing and credit card processing platform for businesses.)
+- Setting up a Firebase – for Handling database and authentication .Basically the database will be used to store the login information for the users, but the resource can be used for storing product information as well.
+Setting up Authentication
+- Netlify for Deployement
 ### :bulb: Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
