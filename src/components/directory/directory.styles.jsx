@@ -38,26 +38,71 @@ export const CategoryBodyContainer = styled.div`
 
     span {
         width: 400px;
+        margin-bottom: 20px;
     }
 
-    p {
-        // font-weight: lighter;
-        width: 150px;
-        font-size: 20px;
-        font-weight: 600;
-        text-align: center;
-        background-color: white;
-        border: none;
-        border-radius: 2px;
-        padding: 15px 15px;
-        color: black;
+    .btn-white {
+        width: 250px;
+        display: inline-flex;
+        align-items: center;
+        color: #fff;
+        border: 1px solid #fff;
+        min-height: 50px;
+        padding: 0 20px;
+        font-size: 17px;
+        text-transform: uppercase;
+        z-index: 1;
+        position: relative;
+        background-color: transparent;
 
+        &::before{
+            content: "";
+            background-color: #fff;
+            display: block;
+            width: 45px;
+            height: 1px;
+            margin-right: 20px;
+        }
+        &::after{
+            content: "";
+            background-color: #fff;
+            display: block;
+            width: 0%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            position: absolute;
+            z-index: -1;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
         &:hover {
             cursor: pointer;
-            background-color: #280b0b;
-            color: beige;
-            transition: ease-in-out 0.3s;
+            color: #232963;
+            text-decoration: none;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+
+            &::after{
+                width: 100%;
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;  
+            }
+            &::before{
+                background-color: #232963;
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+            }
         }
+    
     }
     @media screen and (max-width: 800px) {
         padding: 10px 20px;

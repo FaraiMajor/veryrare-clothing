@@ -54,7 +54,7 @@ const Directory = () => {
                 <CategoryBodyContainer>
                     <h2>Best Collection in the Whole World</h2>
                     <span>It’s time to step outside your color comfort zone. Our collection is truly our of this world</span>
-                    <p onClick={goToShopHandler}>Shop Now</p>
+                    <button class="btn-white" onClick={goToShopHandler}>Shop Now</button>
                 </CategoryBodyContainer>
             </BannerContainer >
             <DirectoryContainer>
