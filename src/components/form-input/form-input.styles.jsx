@@ -10,7 +10,7 @@ const shrinkLabelStyles = css`
 `;
 
 export const FormInputLabel = styled.label`
-color: ${subColor};
+  color: black;
   position: absolute;
   top: 0;
   left: 0;

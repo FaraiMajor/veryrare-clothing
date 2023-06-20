@@ -2,6 +2,7 @@ import { useContext, useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 
 import ProductCard from '../../components/product-card/product-card';
+import Footer from '../../components/footer/footer';
 
 import { CategoriesContext } from '../../contexts/categories.context';
 
@@ -25,6 +26,7 @@ const Category = () => {
                         <ProductCard key={product.id} product={product} />
                     ))}
             </CategoryContainer>
+            <Footer />
         </Fragment>
     );
 };

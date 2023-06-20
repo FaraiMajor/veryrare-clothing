@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Slider from '../slideshow/slider';
 import DirectoryItem from '../directory-item/directory-item'
+import Footer from '../footer/footer';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
@@ -62,6 +63,7 @@ const Directory = () => {
                     <DirectoryItem key={category.id} category={category} />
                 ))}
             </DirectoryContainer>
+            <Footer />
         </>
     );
 };
