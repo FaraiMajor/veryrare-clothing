@@ -14,7 +14,7 @@ export const FormInputLabel = styled.label`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 0;
+  padding: 10px 5px;
   font-size: 16px;
   pointer-events: none;
   transition: 300ms ease all;

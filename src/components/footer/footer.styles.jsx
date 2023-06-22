@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
+    background-color: #F5F5F5;
+    margin-top: 100px;
    
 `;
 
@@ -38,17 +40,18 @@ export const FooterSub = styled.section`
         font-size: 12px;
     }
 
-    div{
+    .socials{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-     
     }
 
 `;
 export const FooterBelow = styled.section`
     display: flex;
-    padding: 0 2rem 2rem;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
 
     
 `;

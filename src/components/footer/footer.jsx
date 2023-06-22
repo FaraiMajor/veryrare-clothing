@@ -27,13 +27,16 @@ const Footer = () => {
                                 regarding exclusive collection previews, special
                                 events, and seasonal sale offers.
                             </p>
-                            <FormInput
-                                label='EMAIL ADDRESS'
-                                inputOptions={{
-                                    type: 'email',
-                                    required: true,
-                                }}
-                            />
+                            <form>
+                                <FormInput
+                                    label='email address'
+                                    inputOptions={{
+                                        type: 'email',
+                                        required: true,
+                                        name: 'password',
+                                    }}
+                                />
+                            </form>
                             <p>By subscribing the newsletter, you confirm
                                 to have read the Privacy Policy and you consent to
                                 the processing of your personal data for marketing
@@ -92,10 +95,10 @@ const Footer = () => {
                             </a>
                             <h4>FOLLOW VERY RARE</h4>
                             <div className="socials">
-                                <SocialIcon url="https://twitter.com/twitter" />
-                                <SocialIcon url="https://instagram.com/instagram" />
-                                <SocialIcon url="https://facebook.com/facebook" />
-                                <SocialIcon url="https://linkedin.com/linkedin" />
+                                <SocialIcon className="social_links" url="https://twitter.com/twitter" />
+                                <SocialIcon className="social_links" url="https://instagram.com/instagram" />
+                                <SocialIcon className="social_links" url="https://facebook.com/facebook" />
+                                <SocialIcon className="social_links" url="https://linkedin.com/linkedin" />
                             </div>
                         </FooterSub>
                     </FooterLinks>
