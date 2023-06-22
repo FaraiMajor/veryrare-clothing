@@ -106,7 +106,7 @@ const Footer = () => {
                 </FooterPadding>
                 <FooterBelow>
                     <small>
-                        @ {new Date().getFullYear()} Very Rare. All Rights Reserved
+                        @ {year} Very Rare. All Rights Reserved
                     </small>
                 </FooterBelow>
 

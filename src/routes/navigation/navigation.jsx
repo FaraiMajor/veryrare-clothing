@@ -1,5 +1,5 @@
 import { Fragment, useContext } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
@@ -28,7 +28,7 @@ const Navigation = () => {
         <Fragment>
             <NavigationContainer>
                 <LogoContainer to='/'>
-                    <img className='logo' src={Diamond} />
+                    <img className='logo' alt='site logo' src={Diamond} />
                     <h1 className='logo-text'>VERYRARE</h1>
                 </LogoContainer>
                 <NavLinks>

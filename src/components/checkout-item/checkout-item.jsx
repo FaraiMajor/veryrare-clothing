@@ -14,7 +14,6 @@ import {
     ImageContainer,
     BaseSpan,
     Quantity,
-    Value,
     RemoveButton,
 } from './checkout-item.styles';
 
