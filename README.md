@@ -4,7 +4,7 @@ Very Rare is the Fully functional Real custom made Web application that covers a
 
 ### :camera: A demo of the Web App
 
-![screenshot](src/veryrare.gif)
+![screenshot](veryrare.gif)
 
 ## Features
 As a user you can
