@@ -1,15 +1,23 @@
-import { useContext } from "react";
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CartContext } from "../../contexts/cart.context";
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+
+import {
+    clearItemFromCart,
+} from '../../store/cart/cart.action';
+import { selectCartItems } from '../../store/cart/cart.selector';
 
 import { CartItemContainer, ItemDetails, RemoveItem } from "./cart-item.styles";
 
 const CartItem = ({ cartItem }) => {
     const { imageUrl, price, name, quantity } = cartItem;
+    const cartItems = useSelector(selectCartItems);
 
-    const { clearItemFromCart } = useContext(CartContext);
+    const dispatch = useDispatch();
 
-    const clearItemHandler = () => clearItemFromCart(cartItem);
+    const clearItemHandler = () =>
+        dispatch(clearItemFromCart(cartItems, cartItem));
+
     return (
         <CartItemContainer>
             <img src={imageUrl} alt={`${name}`} />
@@ -20,7 +28,7 @@ const CartItem = ({ cartItem }) => {
                 </span>
             </ItemDetails>
             <RemoveItem onClick={clearItemHandler}>
-                &#10005;
+                <DeleteForeverOutlinedIcon />
             </RemoveItem>
         </CartItemContainer>
     );
