@@ -8,6 +8,14 @@ export const CheckoutItemContainer = styled.div`
     padding: 15px 0;
     font-size: 20px;
     align-items: center;
+
+    @media screen and (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
 `;
 export const ImageContainer = styled.div`
     width: 23%;
@@ -17,19 +25,66 @@ export const ImageContainer = styled.div`
       width: 100%;
       height: 100%;
     }
+    @media screen and (max-width: 800px) {
+      width: 65%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   `;
 
 export const BaseSpan = styled.span`
     width: 40%;
+    margin-right: 80px;
+
+    @media screen and (max-width: 800px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: 20px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+`;
+export const BaseSpan2 = styled.span`
+    margin-left: 120px;
+
+    @media screen and (max-width: 800px) {
+      margin: 15px 0;
+      font-size: 20px;
+      font-weight: 600;
+      
+    }
 `;
 
 export const Quantity = styled(BaseSpan)`
-  display: flex;
-  width: 40%;
+    display: flex;
+
+    @media screen and (max-width: 800px) {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+      
+    }
+
+
 `;
 
 export const RemoveButton = styled.div`
-    padding-left: 12px;
+    margin-left: 120px;   
     cursor: pointer;
+
+    @media screen and (max-width: 800px) {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+     
+   }
   `;
 

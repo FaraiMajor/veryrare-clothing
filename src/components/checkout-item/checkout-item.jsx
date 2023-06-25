@@ -1,6 +1,4 @@
-import { useContext } from "react";
-
-import { CartContext } from "../../contexts/cart.context";
+import { useDispatch, useSelector } from 'react-redux';
 
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Badge from "@material-ui/core/Badge";
@@ -8,10 +6,19 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+
+import {
+    clearItemFromCart,
+    addItemToCart,
+    removeItemFromCart,
+} from '../../store/cart/cart.action';
+import { selectCartItems } from '../../store/cart/cart.selector';
 
 import {
     CheckoutItemContainer,
     ImageContainer,
+    BaseSpan2,
     BaseSpan,
     Quantity,
     RemoveButton,
@@ -19,13 +26,15 @@ import {
 
 const CheckoutItem = ({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
 
-    const { clearItemFromCart, addItemToCart, removeItemToCart } =
-        useContext(CartContext);
+    const clearItemHandler = () =>
+        dispatch(clearItemFromCart(cartItems, cartItem));
+    const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+    const removeItemHandler = () =>
+        dispatch(removeItemFromCart(cartItems, cartItem));
 
-    const clearItemHandler = () => clearItemFromCart(cartItem);
-    const addItemHandler = () => addItemToCart(cartItem);
-    const removeItemHandler = () => removeItemToCart(cartItem);
 
     return (
         <CheckoutItemContainer >
@@ -34,10 +43,10 @@ const CheckoutItem = ({ cartItem }) => {
             </ImageContainer>
             <BaseSpan>{name}</BaseSpan>
             <Quantity>
-                <Badge color="secondary" badgeContent={quantity}>
-                    <ShoppingCartIcon />{" "}
-                </Badge>
                 <ButtonGroup>
+                    <Badge color="secondary" badgeContent={quantity}>
+                        <ShoppingCartIcon />{" "}
+                    </Badge>
                     <Button onClick={addItemHandler}>
                         {" "}
                         <AddIcon fontSize="small" />
@@ -48,14 +57,13 @@ const CheckoutItem = ({ cartItem }) => {
                         <RemoveIcon fontSize="small" />
                     </Button>
                 </ButtonGroup>
+                <BaseSpan2>${price}</BaseSpan2>
+                <RemoveButton onClick={clearItemHandler}>
+                    <DeleteForeverOutlinedIcon fontSize='medium' />
+                </RemoveButton>
             </Quantity>
-            <BaseSpan>${price}</BaseSpan>
-            <RemoveButton onClick={clearItemHandler}>
-                &#10005;
-            </RemoveButton>
-
         </CheckoutItemContainer >
     )
-
 }
 export default CheckoutItem;
+{/* &#10005; */ }
