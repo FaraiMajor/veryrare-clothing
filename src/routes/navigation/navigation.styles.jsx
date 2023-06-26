@@ -9,6 +9,10 @@ export const NavigationContainer = styled.div`
     align-items: center;
     padding: 5px 0px;
     margin: 0px 0 5px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    background-color: white;
     border-bottom: solid rgb(192, 190, 190) 0.1px;
 
     @media screen and (max-width: 800px) {
