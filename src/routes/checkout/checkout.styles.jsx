@@ -15,6 +15,9 @@ export const CheckoutContainer = styled.div`
         font-size: 2rem;
         font-weight: 600;
     }
+    @media screen and (max-width: 800px) {
+       width: 80%
+  }
 `;
 export const Total = styled.span`
         margin-top: 10px;
