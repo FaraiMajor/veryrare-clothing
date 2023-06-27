@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-import Button from '../button/button';
+import {
+    BaseButton,
+    InvertedButton,
+} from '../button/button.styles';
 
 export const CartDropdownContainer = styled.div`
     position: absolute;
@@ -16,7 +19,8 @@ export const CartDropdownContainer = styled.div`
     top: 80px;
     right: 10px;
     z-index: 5;
-    ${Button} {
+    ${BaseButton},
+    ${InvertedButton} {
         margin-top: auto;
       }
     `;

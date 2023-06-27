@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectCartItems, selectCartTotal, selectIsCartOpen } from '../../store/cart/cart.selector';
 import { setIsCartOpen } from '../../store/cart/cart.action';
 
-import Button from '../button/button';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button';
 import CartItem from '../cart-item/cart-item';
 
 import {
@@ -49,7 +49,12 @@ const CartDropdown = () => {
                 <CartTotal>
                     Your Bag Total: <TotalEl>${cartTotal}</TotalEl>
                 </CartTotal>
-                <Button onClick={goToCheckoutHandler}>View Bag & Checkout</Button>
+                <Button
+                    buttonType={BUTTON_TYPE_CLASSES.base}
+                    onClick={goToCheckoutHandler}
+                >
+                    View Bag & Checkout
+                </Button>
             </CheckoutEl>
         </CartDropdownContainer>
     );
