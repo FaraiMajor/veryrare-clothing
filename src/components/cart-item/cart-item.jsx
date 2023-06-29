@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import {
     clearItemFromCart,
@@ -28,7 +30,9 @@ const CartItem = ({ cartItem }) => {
                 </span>
             </ItemDetails>
             <RemoveItem onClick={clearItemHandler}>
-                <DeleteForeverOutlinedIcon />
+                <IconButton aria-label="delete">
+                    <DeleteIcon />
+                </IconButton>
             </RemoveItem>
         </CartItemContainer>
     );
