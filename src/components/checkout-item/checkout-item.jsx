@@ -6,7 +6,8 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
-import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import {
     clearItemFromCart,
@@ -59,7 +60,9 @@ const CheckoutItem = ({ cartItem }) => {
                 </ButtonGroup>
                 <BaseSpan2>${price}</BaseSpan2>
                 <RemoveButton onClick={clearItemHandler}>
-                    <DeleteForeverOutlinedIcon fontSize='medium' />
+                    <IconButton aria-label="delete">
+                        <DeleteIcon />
+                    </IconButton>
                 </RemoveButton>
             </Quantity>
         </CheckoutItemContainer >

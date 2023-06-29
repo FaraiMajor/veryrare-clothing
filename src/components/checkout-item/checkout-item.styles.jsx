@@ -75,7 +75,7 @@ export const Quantity = styled(BaseSpan)`
 `;
 
 export const RemoveButton = styled.div`
-    margin-left: 120px;   
+    margin-left: 100px;   
     cursor: pointer;
 
     @media screen and (max-width: 800px) {
