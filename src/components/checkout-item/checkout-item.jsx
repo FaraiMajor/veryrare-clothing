@@ -69,4 +69,3 @@ const CheckoutItem = ({ cartItem }) => {
     )
 }
 export default CheckoutItem;
-{/* &#10005; */ }

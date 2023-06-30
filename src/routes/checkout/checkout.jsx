@@ -6,9 +6,10 @@ import {
 } from '../../store/cart/cart.selector';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item';
+import PaymentForm from "../../components/payment-form/payment-form";
 import Footer from '../../components/footer/footer';
 
-import { CheckoutContainer, Total } from './checkout.styles';
+import { CheckoutContainer, Total, CheckoutMainContainer } from './checkout.styles';
 
 const Checkout = () => {
     const cartItems = useSelector(selectCartItems);
@@ -16,13 +17,16 @@ const Checkout = () => {
 
     return (
         <>
-            <CheckoutContainer>
-                <span className='bag-title'>Your Bag</span>
-                {cartItems.map((cartItem) => (
-                    <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-                ))}
-                <Total>TOTAL: ${cartTotal}</Total>
-            </CheckoutContainer>
+            <CheckoutMainContainer>
+                <CheckoutContainer>
+                    <span className='bag-title'>Your Bag</span>
+                    {cartItems.map((cartItem) => (
+                        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+                    ))}
+                    <Total>TOTAL: ${cartTotal}</Total>
+                </CheckoutContainer>
+                <PaymentForm />
+            </CheckoutMainContainer>
             <Footer />
         </>
     );
