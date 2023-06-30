@@ -3,8 +3,7 @@
 Very Rare is the Fully functional Real custom made Web application that covers and entire E-commerece functionality from designing, User Authentication till Payments build using React JS, Firebase and Stripe.
 
 ### :camera: A demo of the Web App
-
-![screenshot](veryrare.gif)
+<img src="veryrare.gif" width="100%" height="90%">
 
 ## Features
 As a user you can
