@@ -9,8 +9,8 @@ export const PaymentFormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // background-color: #F8F8F8;
   background-color: #e6f0ff;
+  // border: solid black 1px;
   border-radius: 10px;
   margin-right: 40px;
   margin-top: 25px;
@@ -19,6 +19,7 @@ export const PaymentFormContainer = styled.div`
   @media screen and (max-width: 800px) {
     min-width: 400px;
     height: 300px;
+    border-radius: 0;
 }
   
 `;
