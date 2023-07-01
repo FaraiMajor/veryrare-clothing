@@ -10,12 +10,13 @@ export const BackgroundImage = styled.div`
 
 export const Body = styled.div`
         height: 90px;
-        padding: 0 25px;
+        width: 90px;
+        padding: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        // border: 1px solid black;
+       border-radius: 50%;
         background-color: white;
         opacity: 0.7;
         position: absolute;
@@ -31,7 +32,7 @@ export const Body = styled.div`
 
 
         p {
-            font-weight: lighter;
+            font-weight: 400;
             font-size: 16px;
         }
 `;
@@ -58,7 +59,7 @@ export const DirectoryItemContainer = styled.div`
 
 
         ${Body} {
-            opacity: 0.6;
+            opacity: 0.9;
         }
     }
 
