@@ -11,13 +11,20 @@ import './index.scss';
 import { store, persistor } from './store/store';
 import { stripePromise } from "./utils/stripe/stripe.utils";
 
+const appearance = {
+  theme: 'stripe',
+};
+const options = {
+  appearance,
+};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-          <Elements stripe={stripePromise}>
+          <Elements options={options} stripe={stripePromise}>
             <App />
           </Elements>
         </BrowserRouter>

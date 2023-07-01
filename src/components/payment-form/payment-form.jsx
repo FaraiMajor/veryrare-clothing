@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { selectCartTotal } from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
 
+import { clearCart } from '../../store/cart/cart.action';
+
 import { FormContainer } from './payment-form.styles';
-// import { BUTTON_TYPE_CLASSES } from '../button/button';
 
 import { PaymentButton, PaymentFormContainer } from './payment-form.styles';
 
@@ -16,6 +17,7 @@ const PaymentForm = () => {
     const amount = useSelector(selectCartTotal);
     const currentUser = useSelector(selectCurrentUser);
     const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+    const dispatch = useDispatch();
 
     const paymentHandler = async (e) => {
         e.preventDefault();
@@ -39,11 +41,11 @@ const PaymentForm = () => {
             payment_method: {
                 card: elements.getElement(CardElement),
                 billing_details: {
-                    name: currentUser ? currentUser.displayName : 'Farai Major',
+                    name: currentUser ? currentUser.displayName : 'Guest',
                 },
             },
         });
-
+        dispatch(clearCart())
         setIsProcessingPayment(false);
 
         if (paymentResult.error) {
@@ -60,12 +62,6 @@ const PaymentForm = () => {
             <FormContainer onSubmit={paymentHandler}>
                 <h2>Credit Card Payment:</h2>
                 <CardElement />
-                {/* <PaymentButton
-                    buttonType={BUTTON_TYPE_CLASSES.payment}
-                    isLoading={isProcessingPayment}
-                >
-                    Pay Now
-                </PaymentButton> */}
                 <PaymentButton
                     data-tooltip={`Price: $${amount}`}
                     isLoading={isProcessingPayment}
