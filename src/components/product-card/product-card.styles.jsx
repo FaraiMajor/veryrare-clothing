@@ -71,7 +71,8 @@ export const Footer = styled.div`
 
         @media screen and (max-width: 800px) {
             width: 100%;
-            margin-bottom: 10px            
+            margin-bottom: 10px;
+            font-size: 15px            
         }
 `;
 export const Name = styled.span`

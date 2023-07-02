@@ -37,6 +37,7 @@ const CartDropdown = () => {
             onMouseLeave={handleMouseLeave}
         >
             <CartItems>
+
                 {cartItems.length ? (
                     cartItems.map((cartItem) => (
                         <CartItem key={cartItem.id} cartItem={cartItem} />

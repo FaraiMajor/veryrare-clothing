@@ -7,7 +7,7 @@ import {
 
 export const CartDropdownContainer = styled.div`
     position: absolute;
-    width: 400px;
+    width: 360px;
     height: 450px;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,13 @@ export const CartDropdownContainer = styled.div`
     ${InvertedButton} {
         margin-top: auto;
       }
+
+      @media screen and (max-width: 800px) {
+        top: 90px;
+        right: 0px;
+        
+      }
+
     `;
 
 export const CartItems = styled.div`

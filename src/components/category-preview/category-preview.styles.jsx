@@ -16,7 +16,7 @@ export const CategoryPreviewContainer = styled.div`
 `;
 
 export const Title = styled(Link)`
-    font-size: 28px;
+    font-size: 18px;
     margin-bottom: 25px;
     cursor: pointer;
     text-decoration: none;
@@ -47,7 +47,7 @@ export const Title = styled(Link)`
         }
 
     @media screen and (max-width: 800px) {
-      font-size: 35px;
+      font-size: 20px;
       display :flex;
       justify-content: center;
       align-items: center;

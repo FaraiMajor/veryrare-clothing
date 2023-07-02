@@ -43,3 +43,53 @@ export const Total = styled.span`
         font-weight: 800px
     `;
 
+export const EmptyBag = styled.div`
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
+    margin-left: 300px;
+    p{
+        font-size: 20px;
+        margin-bottom: 25px;
+        font-weight: 800;
+    }
+    img{
+        margin: 0 auto 20px;
+    }
+    @media screen and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-item: center;
+        margin:0 auto 55px;
+   }
+
+    `;
+
+export const EmptyBagButton = styled.button`
+    min-width: 165px;
+    width: 300px;
+    height: 50px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    font-family: 'Open Sans Condensed';
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+    }
+    `;
+

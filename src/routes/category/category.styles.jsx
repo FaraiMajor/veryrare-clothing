@@ -21,9 +21,10 @@ export const CategoryContainer = styled.div`
 `;
 
 export const CategoryTitle = styled.h2`
-    font-size: 35px;
-    display :flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 14px;
+    font-size: 15px;
+    margin: 25px 0 25px 40px;
+
+    @media screen and (max-width: 400px) {
+      margin: 35px 0 25px 40px;
+    }
 `;

@@ -11,7 +11,7 @@ export const BannerContainer = styled.div`
     width: inherit;
     height: 435px;
     display: flex;
-    background-color: black;
+    background-color: #1a1a1a;
     margin-bottom: 9.2px;
     flex: 1 1 auto;
     color: whitesmoke;

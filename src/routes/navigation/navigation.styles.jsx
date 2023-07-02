@@ -33,17 +33,22 @@ export const LogoContainer = styled(Link)`
 
         .logo {
             width: 80%;
+            display: none;
         }
 
         .logo-text {
-            font-size: 1.3rem;
+            font-size: 2rem;
             font-weight: 600;
+            letter-spacing: 15px;
             color: black
         }
 
         @media screen and (max-width: 800px) {
-
             .logo-text{
+                font-size: 1rem;
+                letter-spacing: 5px;
+            }
+            .logo {
                 display: none;
             }
           }
@@ -56,6 +61,11 @@ export const NavLinks = styled.div`
         justify-content: flex-end;
         text-align: center;
         font-weight: 600;
+
+        @media screen and (max-width: 800px) {
+            padding-right: 15px;
+        }
+
 `;
 
 export const NavLink = styled(Link)`
@@ -82,5 +92,8 @@ export const NavLink = styled(Link)`
         &:hover:after {
             width: 100%;
             left: 0;
+        }
+        @media screen and (max-width: 800px) {
+            display: none;
         }
 `;

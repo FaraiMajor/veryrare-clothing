@@ -14,13 +14,15 @@ export const PaymentFormContainer = styled.div`
   border-radius: 10px;
   margin-right: 40px;
   margin-top: 25px;
-  padding: 0 20px
+  // padding: 0 20px
   
   @media screen and (max-width: 800px) {
-    min-width: 400px;
-    height: 300px;
+    min-width: 200px;
+    height: 200px;
     border-radius: 0;
-}
+    padding: 0;
+    margin: 0;
+  }
   
 `;
 
@@ -30,6 +32,7 @@ export const FormContainer = styled.form`
 
   @media screen and (max-width: 800px) {
     min-width: 350px;
+    padding: 30px 5px;
 } 
 `;
 
