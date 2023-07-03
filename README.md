@@ -38,11 +38,37 @@ Very Rare is the Fully functional Real custom made Web application that covers a
 <p align="center">
 <img src="very-rare.gif" ">
 </p>
-
 <details>
 <summary><h3>Snapshots of App</h3></summary>
-<br>
-<img src="veryrare.gif" width="100%" height="90%">
+    
+<p align="center">
+    <h3 color="red">HOME PAGE</h3>
+    <img src="https://i.ibb.co/m9wvMrs/main.png" width="80%">
+    </br>
+        <h3 color="red">AUTHENTICATION PAGE</h3>
+    <img src="https://i.ibb.co/P49W9vw/auth.png" width="80%">
+    </br>
+        <h3 color="red">MENU</h3>
+    <img src="https://i.ibb.co/2gGQyRQ/burger.png" width="80%">
+    </br>
+      <h3 color="red">SORT ITEMS</h3>
+     <img src="https://i.ibb.co/Xy9Tw8Q/sortitems.png" width="80%">
+     </br>
+        <h3 color="red">FEATURES ITEMS</h3>
+    <img src="https://i.ibb.co/425G6MG/featured.png" width="80%">
+    </br>
+        <h3 color="red">SHOPPING CART</h3>
+    <img src="https://i.ibb.co/wrY9pr4/shopping-cart.png" width="80%">
+    </br>
+        <h3 color="red">CHECKOUT PAGE</h3>
+    <img src="https://i.ibb.co/cCdvRGB/checkout.png" width="80%">
+    </br>
+        <h3 color="red">EMPTY CHECKOUT PAGE</h3>
+     <img src="https://i.ibb.co/jfv3x2w/emptycheckout.png" width="80%">
+     </br>
+     <h3 color="red">FOOTER</h3>
+     <img src="https://i.ibb.co/9nD01cz/footer.png" width="80%">   
+</p>
 </details>
 
 ## Features
@@ -51,6 +77,7 @@ As a user you can:
 - Login/Log out or set up a New Account(Register)
 - View list of different products
 - Filter products based on category
+- Arrange products based on price and alphabetical order of product names
 - Add and remove them from Cart
 - Proceed to checkout page to buy the product
 - Create orders and Make payments
