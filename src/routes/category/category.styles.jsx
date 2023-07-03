@@ -32,16 +32,17 @@ export const CategoryTitle = styled.h2`
 export const LabelSelect = styled.div`
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    width: 250px;
     position: static;
     max-width: 240px;
     margin:10px 40px;
 
     select{
-      padding: 11px 70px 11px 10px;
+      padding: 11px 0px 11px 10px;
       font-size: 0.85rem;
       border: 0.5px black solid;
-      border-radius: 3px;
+      border-radius: 5px;
+      background: white;
 
       &:focus {
         outline: none;
@@ -61,6 +62,9 @@ export const LabelSelect = styled.div`
 
       @media screen and (max-width: 800px) {
         margin:10px 10px;
+        select{
+          padding: 21px 70px 11px 10px;
+        }
     `;
 
 export const TopElement = styled.div`
