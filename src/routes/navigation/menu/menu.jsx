@@ -1,6 +1,6 @@
 import React from 'react';
 import { bool } from 'prop-types';
-import { StyledMenu, NavLink } from './menu.styles.jsx';
+import { StyledMenu, NavLink, TopMenu, BottomMenu } from './menu.styles.jsx';
 
 const Menu = ({ open, ...props }) => {
 
@@ -9,30 +9,44 @@ const Menu = ({ open, ...props }) => {
 
     return (
         <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-            <NavLink to='/'>
-                <span aria-hidden="true"></span>
-                Home
-            </NavLink>
-            <NavLink to='/shop/mens'>
-                <span aria-hidden="true"></span>
-                Men
-            </NavLink>
-            <NavLink to='/shop/womens'>
-                <span aria-hidden="true"></span>
-                Women
-            </NavLink>
-            <NavLink to='/shop/sneakers'>
-                <span aria-hidden="true"></span>
-                Sneakers
-            </NavLink>
-            <NavLink to='/shop/jackets'>
-                <span aria-hidden="true"></span>
-                Jackets
-            </NavLink>
-            <NavLink to='/shop/hats'>
-                <span aria-hidden="true"></span>
-                Hats
-            </NavLink>
+            <TopMenu>
+                <NavLink to='/'>
+                    Home
+                </NavLink>
+                <NavLink to='/shop/mens'>
+                    Men
+                </NavLink>
+                <NavLink to='/shop/womens'>
+                    Women
+                </NavLink>
+                <NavLink to='/shop/sneakers'>
+                    Sneakers
+                </NavLink>
+                <NavLink to='/shop/jackets'>
+                    Jackets
+                </NavLink>
+                <NavLink to='/shop/hats'>
+                    Hats
+                </NavLink>
+            </TopMenu>
+            <BottomMenu>
+                <hr
+                    style={{
+                        color: 'black',
+                        height: '0.01px',
+                        width: '100%',
+                    }}
+                />
+                <NavLink to='/auth'>
+                    Sign In
+                </NavLink>
+                <NavLink to='/shop'>
+                    Featured
+                </NavLink>
+                <NavLink to='/checkout'>
+                    Checkout
+                </NavLink>
+            </BottomMenu>
         </StyledMenu>
     )
 }

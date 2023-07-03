@@ -22,9 +22,55 @@ export const CategoryContainer = styled.div`
 
 export const CategoryTitle = styled.h2`
     font-size: 15px;
-    margin: 25px 0 25px 40px;
+    margin: 35px 0 25px 40px;
 
-    @media screen and (max-width: 400px) {
-      margin: 35px 0 25px 40px;
+    @media screen and (max-width: 800px) {
+      margin: 35px auto 10px;
     }
+`;
+
+export const LabelSelect = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    max-width: 240px;
+    margin:10px 40px;
+
+    select{
+      padding: 11px 70px 11px 10px;
+      font-size: 0.85rem;
+      border: 0.5px black solid;
+      border-radius: 3px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    label{
+      font-size: 0.75rem;
+      font-weight: 00;
+      position: relative;
+      top: 0.5rem;
+      margin: 0 0 0 9px;
+      padding: 0 3px;
+      background: white;
+      width: fit-content;
+    }
+
+      @media screen and (max-width: 800px) {
+        margin:10px 10px;
+    `;
+
+export const TopElement = styled.div`
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+
+      @media screen and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        margin:10px 30px;
+      }
 `;

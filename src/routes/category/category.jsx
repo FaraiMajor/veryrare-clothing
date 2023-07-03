@@ -12,27 +12,109 @@ import {
     selectIsLoading,
 } from '../../store/categories/categories.selector';
 
-import { CategoryContainer, CategoryTitle } from './category.styles';
+import { CategoryContainer, CategoryTitle, LabelSelect, TopElement } from './category.styles';
 
 const Category = () => {
     const { category } = useParams();
     const categoriesMap = useSelector(selectCategoriesMap);
     const isLoading = useSelector(selectIsLoading);
-    const [products, setProducts] = useState(categoriesMap[category]);
+    const [minPrice, setMinPrice] = useState('');
+    const [maxPrice, setMaxPrice] = useState('')
+    const [products, setProducts] = useState({
+        data: categoriesMap[category],
+        sortOption: '', // Initially no sorting option selected
+        filterOption: '', // Initially no filtering option selected
+    });
 
     useEffect(() => {
-        setProducts(categoriesMap[category]);
+        setProducts({
+            data: categoriesMap[category],
+            sortOption: '',
+            filterOption: '', // Reset the filtering option when the category changes
+        });
     }, [category, categoriesMap]);
+
+
+    const handleSortChange = (event) => {
+        const sortOption = event.target.value;
+        let sortedProducts = [...products.data];
+
+        if (sortOption === 'nameAZ') {
+            sortedProducts = sortedProducts.sort((a, b) =>
+                a.name.localeCompare(b.name)
+            );
+        } else if (sortOption === 'nameZA') {
+            sortedProducts = sortedProducts.sort((a, b) =>
+                b.name.localeCompare(a.name)
+            );
+        } else if (sortOption === 'priceLowToHigh') {
+            sortedProducts = sortedProducts.sort((a, b) => a.price - b.price);
+        } else if (sortOption === 'priceHighToLow') {
+            sortedProducts = sortedProducts.sort((a, b) => b.price - a.price);
+        }
+
+        setProducts({ ...products, data: sortedProducts, sortOption });
+    };
+
+    // const filterByPriceRange = (minPrice, maxPrice) => {
+    //     const filteredProducts = products.data.filter(
+    //         (product) => product.price >= minPrice && product.price <= maxPrice
+    //     );
+    //     setProducts({
+    //         ...products,
+    //         data: filteredProducts,
+    //         filterOption: `priceRange-${minPrice}-${maxPrice}`,
+    //     });
+    // };
+
+    const clearFilters = () => {
+        setProducts({
+            ...products,
+            data: categoriesMap[category],
+            filterOption: '',
+        });
+    };
+
 
     return (
         <Fragment>
-            <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
+            <TopElement>
+                <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
+                <LabelSelect>
+                    <label className="text">Sort by</label>
+                    <select onChange={handleSortChange}>
+                        <option value="">Featured Items</option>
+                        <option value="priceLowToHigh">Price: Low to High</option>
+                        <option value="priceHighToLow">Price: High to Low</option>
+                        <option value="nameAZ">Name (A-Z)</option>
+                        <option value="nameZA">Name (Z-A)</option>
+
+                    </select>
+                </LabelSelect>
+            </TopElement>
+            {/* <div>
+                <label>Min Price:</label>
+                <input
+                    type="number"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(e.target.value)}
+                />
+                <label>Max Price:</label>
+                <input
+                    type="number"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(e.target.value)}
+                />
+                <button onClick={() => filterByPriceRange(minPrice, maxPrice)}>
+                    Apply Price Filter
+                </button>
+            </div> */}
             {isLoading ? (
                 <Spinner />
             ) : (
                 <CategoryContainer>
-                    {products &&
-                        products.map((product) => (
+                    {products.data &&
+                        products.data.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))}
                 </CategoryContainer>

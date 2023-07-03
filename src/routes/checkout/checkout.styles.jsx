@@ -92,4 +92,27 @@ export const EmptyBagButton = styled.button`
         border: 1px solid black;
     }
     `;
+export const CardSection = styled.div`
+        width: 500px;
+        details{
+            margin-top: 15px;
+            h4{
+                margin-left: 15px;
+            }
+            p{
+                margin-left: 10px;
+                span{
+                    font-weight: 800;
+                    margin: 0 15px;
+                }
+            }
+            
+        }
+        @media screen and (max-width: 800px) {
+            width: 100%;
+            details{
+                margin: 10px;
+            }
+        }
+`;
 
