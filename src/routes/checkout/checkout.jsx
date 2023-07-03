@@ -41,7 +41,7 @@ const Checkout = () => {
                     </CheckoutContainer>
                 ) : (
                     <EmptyBag>
-                        <img src={ShoppingBags} width='60' />
+                        <img src={ShoppingBags} width='60' alt='shopping bag' />
                         <p>Your Shopping Bag is empty.</p>
                         <EmptyBagButton onClick={goToShopHandler}>Continue Shopping</EmptyBagButton>
                     </EmptyBag>

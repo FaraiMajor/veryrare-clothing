@@ -18,8 +18,8 @@ const Category = () => {
     const { category } = useParams();
     const categoriesMap = useSelector(selectCategoriesMap);
     const isLoading = useSelector(selectIsLoading);
-    const [minPrice, setMinPrice] = useState('');
-    const [maxPrice, setMaxPrice] = useState('')
+    // const [minPrice, setMinPrice] = useState('');
+    // const [maxPrice, setMaxPrice] = useState('')
     const [products, setProducts] = useState({
         data: categoriesMap[category],
         sortOption: '', // Initially no sorting option selected
@@ -67,13 +67,13 @@ const Category = () => {
     //     });
     // };
 
-    const clearFilters = () => {
-        setProducts({
-            ...products,
-            data: categoriesMap[category],
-            filterOption: '',
-        });
-    };
+    // const clearFilters = () => {
+    //     setProducts({
+    //         ...products,
+    //         data: categoriesMap[category],
+    //         filterOption: '',
+    //     });
+    // };
 
 
     return (
@@ -88,7 +88,6 @@ const Category = () => {
                         <option value="priceHighToLow">Price: High to Low</option>
                         <option value="nameAZ">Name (A-Z)</option>
                         <option value="nameZA">Name (Z-A)</option>
-
                     </select>
                 </LabelSelect>
             </TopElement>

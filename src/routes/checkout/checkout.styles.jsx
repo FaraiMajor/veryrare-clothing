@@ -95,6 +95,10 @@ export const EmptyBagButton = styled.button`
 export const CardSection = styled.div`
         width: 500px;
         details{
+            summary{
+                color: red;
+                font-weight: 600;
+            }
             margin-top: 15px;
             h4{
                 margin-left: 15px;
