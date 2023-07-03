@@ -62,9 +62,6 @@ export const LabelSelect = styled.div`
 
       @media screen and (max-width: 800px) {
         margin:10px 10px;
-        select{
-          padding: 31px 70px 31px 10px;
-        }
     `;
 
 export const TopElement = styled.div`
