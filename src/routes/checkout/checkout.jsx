@@ -50,8 +50,8 @@ const Checkout = () => {
                     <PaymentForm />
                     <details>
                         <summary>Click here for Card Instructions</summary>
-                        <h3>Hey, your friendly developer here!</h3>
-                        <h4>USE THIS TEST CARD:</h4>
+                        <h4>Hey, This is a Demo payment!</h4>
+                        <h5>USE THIS TEST CARD:</h5>
                         <p><span>Card Number :</span> 4242 4242 4242 4242</p>
                         <p><span>Expirey Data :</span> 12/29</p>
                         <p><span>CVC :</span> 424</p>

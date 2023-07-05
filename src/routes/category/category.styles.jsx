@@ -3,21 +3,18 @@ import styled from "styled-components";
 export const CategoryContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
-    row-gap: 50px;
-    margin: 0 15px 50px;
+    grid-row-gap: 50px;
+    margin: 0 0px 60px;
 
     @media screen and (max-width: 800px) {
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 15px;
-        grid-row-gap: 25px;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin: 0;
       }
     
-      @media screen and (max-width: 400px) {
-        grid-template-columns: 1fr;
-        grid-row-gap: 45px;
-        margin: 0 35px;
-      }
+
 `;
 
 export const CategoryTitle = styled.h2`
@@ -25,16 +22,16 @@ export const CategoryTitle = styled.h2`
     margin: 35px 0 25px 40px;
 
     @media screen and (max-width: 800px) {
-      margin: 35px auto 10px;
+      margin: 35px 0 10px 10px;
+      font-size: 13px;
     }
 `;
 
 export const LabelSelect = styled.div`
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 200px;
     position: static;
-    max-width: 240px;
     margin:10px 40px;
 
     select{
@@ -61,6 +58,7 @@ export const LabelSelect = styled.div`
     }
 
       @media screen and (max-width: 800px) {
+        width: 150px;
         margin:10px 10px;
     `;
 
@@ -70,8 +68,6 @@ export const TopElement = styled.div`
       margin-top: 25px;
 
       @media screen and (max-width: 800px) {
-        display: flex;
-        flex-direction: column;
-        margin:10px 30px;
+        margin:0;
       }
 `;

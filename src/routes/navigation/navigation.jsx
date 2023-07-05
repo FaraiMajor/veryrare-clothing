@@ -56,7 +56,7 @@ const Navigation = () => {
                             <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
                             <Menu open={open} setOpen={setOpen} id={menuId}
                                 onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
+                                // onMouseLeave={handleMouseLeave}
                                 onClick={closeMenu}
                             />
                         </FocusLock>

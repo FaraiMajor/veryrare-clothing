@@ -83,7 +83,7 @@ const Category = () => {
                 <LabelSelect>
                     <label className="text">Sort by</label>
                     <select onChange={handleSortChange}>
-                        <option value="">Featured Items</option>
+                        <option value="">Filters</option>
                         <option value="priceLowToHigh">Price: Low to High</option>
                         <option value="priceHighToLow">Price: High to Low</option>
                         <option value="nameAZ">Name (A-Z)</option>

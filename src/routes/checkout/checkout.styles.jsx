@@ -96,14 +96,26 @@ export const CardSection = styled.div`
         width: 500px;
         details{
             margin-top: 15px;
+            color: red;
+            font-weight: 600;
             h4{
                 margin-left: 15px;
+                color: green;
+            }
+            h5{
+                margin-left: 15px;
+                color: black;
+                border-bottom: 1px black solid;
+                width: fit-content;
             }
             p{
                 margin-left: 10px;
+                color: black;
+                font-weight: 400;
                 span{
-                    font-weight: 800;
                     margin: 0 15px;
+                    color: blue;
+                    font-weight: 600;
                 }
             }
             
