@@ -97,3 +97,5 @@ export const NavLink = styled(Link)`
             display: none;
         }
 `;
+export const BurgerSearch = styled.div`
+        `;

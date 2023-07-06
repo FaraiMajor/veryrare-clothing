@@ -8,7 +8,7 @@ import Navigation from './routes/navigation/navigation';
 import Authentication from './routes/authentication/authentication';
 import Shop from './routes/shop/shop';
 import Checkout from './routes/checkout/checkout'
-import SearchResult from './routes/search-results/search-result';
+import SearchResult from './components/search-results/search-result';
 import { checkUserSession } from './store/user/user.action';
 
 const App = () => {

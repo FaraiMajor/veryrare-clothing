@@ -10,11 +10,11 @@ import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+import Search from '../search/search'; // Import the Search component
 
 import CartIcon from '../../components/cart-icon/cart-icon';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
 import Diamond from '../../assets/diamond-svg.png'
-import Search from '../../components/search/search';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
@@ -26,6 +26,7 @@ import {
     NavLinks,
     NavLink,
     LogoContainer,
+    BurgerSearch,
 } from './navigation.styles';
 
 const Navigation = () => {
@@ -48,21 +49,22 @@ const Navigation = () => {
     const signOutUser = () => dispatch(signOutStart());
 
     return (
-
         <Fragment>
             <ThemeProvider theme={theme}>
                 <NavigationContainer>
-                    <div ref={node} >
-                        <FocusLock disabled={!open}>
-                            <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-                            <Menu open={open} setOpen={setOpen} id={menuId}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                                onClick={closeMenu}
-                            />
-                        </FocusLock>
-                    </div>
-                    <Search />
+                    <BurgerSearch>
+                        <div ref={node} >
+                            <FocusLock disabled={!open}>
+                                <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+                                <Menu open={open} setOpen={setOpen} id={menuId}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    onClick={closeMenu}
+                                />
+                            </FocusLock>
+                        </div>
+                        <Search />
+                    </BurgerSearch>
                     <LogoContainer to='/'>
                         <img className='logo' alt='site logo' src={Diamond} />
                         <h1 className='logo-text'>VERYRARE</h1>
@@ -77,13 +79,12 @@ const Navigation = () => {
                             <NavLink to='/auth'>SIGN IN</NavLink>
                         )}
                         <CartIcon />
-
                     </NavLinks>
                     {isCartOpen && <CartDropdown />}
                 </NavigationContainer>
                 <Outlet />
             </ThemeProvider>
-        </Fragment>
+        </Fragment >
     );
 };
 
