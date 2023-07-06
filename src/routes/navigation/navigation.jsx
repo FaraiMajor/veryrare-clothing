@@ -14,7 +14,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import CartIcon from '../../components/cart-icon/cart-icon';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown';
 import Diamond from '../../assets/diamond-svg.png'
-import Search from '../../components/search/search';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { selectCurrentUser } from '../../store/user/user.selector';
@@ -62,7 +61,6 @@ const Navigation = () => {
                             />
                         </FocusLock>
                     </div>
-                    <Search />
                     <LogoContainer to='/'>
                         <img className='logo' alt='site logo' src={Diamond} />
                         <h1 className='logo-text'>VERYRARE</h1>
