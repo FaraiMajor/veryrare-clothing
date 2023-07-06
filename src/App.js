@@ -8,6 +8,7 @@ import Navigation from './routes/navigation/navigation';
 import Authentication from './routes/authentication/authentication';
 import Shop from './routes/shop/shop';
 import Checkout from './routes/checkout/checkout'
+import SearchResult from './components/search-results/search-results';
 import { checkUserSession } from './store/user/user.action';
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkUserSession());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='shop/*' element={<Shop />} />
         <Route path='auth' element={<Authentication />} />
         <Route path='checkout' element={<Checkout />} />
+        <Route path='search-results' element={<SearchResult />} />
       </Route>
     </Routes>
   );
