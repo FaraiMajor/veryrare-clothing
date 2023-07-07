@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import ProductCard from '../product-card/product-card';
-import { Container, LabelSelect } from './search.styles';
+import { MainContainer, Container, LabelSelect, TopElement, NoResults } from './search-results.styles';
 import Footer from '../footer/footer';
+import NoResultImage from '../../assets/noresults.png'
+import Navigation from '../../routes/navigation/navigation';
 
 const SearchResult = () => {
     const location = useLocation();
-    const { searchResults } = location.state;
+    const { searchResults, searchTerm } = location.state;
     const [sortBy, setSortBy] = useState('');
 
     const handleSortByChange = (event) => {
@@ -34,25 +36,35 @@ const SearchResult = () => {
 
     return (
         <>
-            <LabelSelect>
-                <label>Sort By:</label>
-                <select value={sortBy} onChange={handleSortByChange}>
-                    <option value="">Filters</option>
-                    <option value="nameAZ">Name (A-Z)</option>
-                    <option value="nameZA">Name (Z-A)</option>
-                    <option value="priceLowToHigh">Price (Low to High)</option>
-                    <option value="priceHighToLow">Price (High to Low)</option>
-                </select>
-            </LabelSelect>
-            <Container>
-                {sortedResults.length > 0 ? (
-                    sortedResults.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))
-                ) : (
-                    <p>0 RESULTS FOUND...</p>
-                )}
-            </Container>
+            <MainContainer>
+                <Navigation />
+                <TopElement>
+                    <p className='searchtitle'>SEARCH RESULTS</p>
+                    <LabelSelect>
+                        <label>Sort by</label>
+                        <select value={sortBy} onChange={handleSortByChange}>
+                            <option value="">Filters</option>
+                            <option value="nameAZ">Name (A-Z)</option>
+                            <option value="nameZA">Name (Z-A)</option>
+                            <option value="priceLowToHigh">Price (Low to High)</option>
+                            <option value="priceHighToLow">Price (High to Low)</option>
+                        </select>
+                    </LabelSelect>
+                </TopElement>
+                <Container>
+                    {sortedResults.length > 0 ? (
+                        sortedResults.map((product) => (
+                            <ProductCard key={product.id} product={product} />
+                        ))
+                    ) : (
+                        <NoResults>
+                            <p className='noresults'>No exact matches found for: <span>{searchTerm}</span></p>
+                            <img src={NoResultImage} alt='no result' width="20%" />
+                        </NoResults>
+                    )}
+                </Container>
+
+            </MainContainer>
             <Footer />
         </>
     );

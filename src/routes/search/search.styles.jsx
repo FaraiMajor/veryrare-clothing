@@ -11,7 +11,7 @@ export const SearchDropdown = styled.div`
   left: 0;
   width: 100%;
   height: 50vh; // Adjust the height to cover half the page
-  background-color: rgba(255,255,255, 1); // Adjust the background color and opacity
+  background-color: rgba(255,255,255, 0.6); // Adjust the background color and opacity
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,15 +62,18 @@ export const SearchIcon = styled.svg`
 `;
 
 export const Icon = styled.button`
-    margin-left: 60px;
-    margin-top: 10px;
+    margin-left: 55px;
+    margin-top: 5px;
     background-color:white;
     cursor: pointer;
-    width: 40px;
+    width: 35px;
     height: 40px;
     outline: none;
     color: black;
     border-style: none;
     border-radius: 50%;
     pointer-events: painted;
+    @media screen and (max-width: 800px) {
+      margin-top: 0px;
+    }
 `;

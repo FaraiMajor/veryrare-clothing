@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { selectCategoriesMap } from '../../store/categories/categories.selector';
@@ -12,8 +12,7 @@ import {
     SearchDropdown,
     SearchIcon,
     InputBoxContainer,
-}
-    from './search.styles'
+} from './search.styles';
 
 const Search = () => {
     const categoriesMap = useSelector(selectCategoriesMap);
@@ -26,32 +25,43 @@ const Search = () => {
         setIsOpen(!isOpen);
     };
 
+    const handleSearch = () => {
+        const results = [];
 
-    const handleSearch = (e) => {
-        if (e.key === 'Enter') {
-            const results = [];
+        // Iterate through each category in the categoriesMap
+        Object.keys(categoriesMap).forEach((category) => {
+            const products = categoriesMap[category];
 
-            // Iterate through each category in the categoriesMap
-            Object.keys(categoriesMap).forEach((category) => {
-                const products = categoriesMap[category];
+            // Filter products based on the search term
+            const filteredProducts = products.filter((product) =>
+                product.name.toLowerCase().includes(searchTerm.toLowerCase())
+            );
 
-                // Filter products based on the search term
-                const filteredProducts = products.filter((product) =>
-                    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-                );
+            // Add filtered products to the results array
+            results.push(...filteredProducts);
+        });
 
-                // Add filtered products to the results array
-                results.push(...filteredProducts);
-            });
-
-            setSearchResults(results);
-            navigate('/search-results', { state: { searchResults } }); // Navigate to the search results page and pass searchResults as state
-            setSearchTerm('');
-        }
+        setSearchResults(results);
+        // navigate('/search-results', { state: { searchResults, searchTerm } });
     };
+
+    useEffect(() => {
+        if (searchTerm || searchResults.length > 0) {
+            navigate('/search-results', { state: { searchResults, searchTerm } });
+        }
+    }, [navigate, searchResults, searchTerm]);
+
     const onSearchChange = (event) => {
-        const searchFieldString = event.target.value.toLocaleLowerCase();
+        const searchFieldString = event.target.value.toLowerCase();
         setSearchTerm(searchFieldString);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            handleSearch();
+            setSearchTerm('');
+            setIsOpen(false);
+        }
     };
 
     return (
@@ -77,7 +87,7 @@ const Search = () => {
                                 type='text'
                                 value={searchTerm}
                                 onChange={onSearchChange}
-                                onKeyDown={handleSearch} // Handle search when Enter key is pressed
+                                onKeyDown={handleKeyDown} // Handle search when Enter key is pressed
                                 placeholder="Search For Products"
                             />
                         </InputBoxContainer>

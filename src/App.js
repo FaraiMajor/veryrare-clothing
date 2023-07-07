@@ -25,8 +25,8 @@ const App = () => {
         <Route path='shop/*' element={<Shop />} />
         <Route path='auth' element={<Authentication />} />
         <Route path='checkout' element={<Checkout />} />
-        <Route path='search-results' element={<SearchResult />} />
       </Route>
+      <Route path='search-results' element={<SearchResult />} />
     </Routes>
   );
 };
