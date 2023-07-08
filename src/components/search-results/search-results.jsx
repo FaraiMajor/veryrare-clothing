@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import ProductCard from '../product-card/product-card';
 import { MainContainer, Container, LabelSelect, TopElement, NoResults } from './search-results.styles';
 import Footer from '../footer/footer';
-import NoResultImage from '../../assets/noresults.png'
+import NoResultImage from '../../assets/nores.jpeg'
 import Navigation from '../../routes/navigation/navigation';
 
 const SearchResult = () => {
@@ -58,8 +58,8 @@ const SearchResult = () => {
                         ))
                     ) : (
                         <NoResults>
-                            <p className='noresults'>No exact matches found for: <span>{searchTerm}</span></p>
-                            <img src={NoResultImage} alt='no result' width="20%" />
+                            <p className='noresults'>Sorry pal, we couldn't find : <span>{searchTerm}</span></p>
+                            <img src={NoResultImage} alt='no result' width="60%" />
                         </NoResults>
                     )}
                 </Container>

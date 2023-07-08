@@ -63,6 +63,17 @@ const Search = () => {
             setIsOpen(false);
         }
     };
+    useEffect(() => {
+        if (searchTerm) {
+            // Delay the search execution after a short interval (e.g., 300ms) to prevent immediate search on each key press
+            const timeoutId = setTimeout(handleSearch, 3000);
+
+            // Cleanup the timeout when the component unmounts or when the search term changes
+            return () => {
+                clearTimeout(timeoutId);
+            };
+        }
+    }, [searchTerm]);
 
     return (
 

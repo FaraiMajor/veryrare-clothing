@@ -87,8 +87,16 @@ export const TopElement = styled.div`
 }
 `;
 export const NoResults = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    grid-template-columns: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 300px;
+    width: 100%;
+    @media screen and (max-width: 800px) {
+      margin: 0;
+    }
+    
 `;

@@ -66,7 +66,7 @@ export const Icon = styled.button`
     margin-top: 5px;
     background-color:white;
     cursor: pointer;
-    width: 35px;
+    width: 40px;
     height: 40px;
     outline: none;
     color: black;
@@ -75,5 +75,7 @@ export const Icon = styled.button`
     pointer-events: painted;
     @media screen and (max-width: 800px) {
       margin-top: 0px;
+      width: 50px;
+      height: 50px;
     }
 `;
