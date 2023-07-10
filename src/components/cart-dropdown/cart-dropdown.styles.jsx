@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import {
-    BaseButton,
-    InvertedButton,
+  BaseButton,
+  InvertedButton,
 } from '../button/button.styles';
 
 export const CartDropdownContainer = styled.div`
@@ -17,7 +17,7 @@ export const CartDropdownContainer = styled.div`
     border-bottom-right-radius: 5px;
     background-color: white;
     top: 80px;
-    right: 10px;
+    right: 0px;
     z-index: 5;
     ${BaseButton},
     ${InvertedButton} {

@@ -11,10 +11,7 @@ export const SearchDropdown = styled.div`
   left: 0;
   width: 100%;
   height: 50vh; // Adjust the height to cover half the page
-  background-color: rgba(255,255,255, 0.6); // Adjust the background color and opacity
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: rgba(255,255,255, 1); // Adjust the background color and opacity
   z-index: 9999;
   backdrop-filter: blur(5px); // Apply backdrop blur effect
   
@@ -34,21 +31,22 @@ export const InputBoxContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin: 20px auto;
   max-width: 30rem;
   width: fit-content;
   height: fit-content;
-  background-color: #333333;
-  border-radius: 0.8em;
+  background-color: #f2f2f2;
+  border-radius: 0.1em;
   overflow: hidden;
 `;
 
 export const InputField = styled.input`
   background-color: transparent;
-  color: #ffffff;
+  color: black;
   outline: none;
   width: 100%;
   border: 0;
-  padding: 1em 5em 1em 0;
+  padding: 1em 10rem 1em 0;
   font-size: 1em;
 
   &::placeholder {
@@ -58,7 +56,7 @@ export const InputField = styled.input`
 export const SearchIcon = styled.svg`
   height: 2rem;
   padding: 0 0.5em 0 0.8em;
-  fill: #abb2bf;
+  fill: #4d4d4d;
 `;
 
 export const Icon = styled.button`
