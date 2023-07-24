@@ -6,6 +6,7 @@ export const DirectoryContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: safe
+    
 `;
 export const BannerContainer = styled.div`
     width: inherit;
@@ -20,6 +21,10 @@ export const BannerContainer = styled.div`
     @media screen and (max-width: 800px) {
        padding: 0;
     }
+    @media screen and (min-width: 1025px) {
+        height: 35rem;
+        
+      }
 
 `;
 
@@ -115,6 +120,20 @@ export const CategoryBodyContainer = styled.div`
         span{
             width: 350px
         }
+  }
+  @media screen and (min-width: 1025px) {
+        padding-left: 0;
+        h2 {
+            width: 700px;
+            font-weight: bold;
+            font-size: 5rem;
+        }
+
+        span {
+            width: 800px;
+            margin-bottom: 20px;
+        }
+    
   }
 
 `;

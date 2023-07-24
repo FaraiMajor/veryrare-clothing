@@ -61,6 +61,14 @@ export const ProductCartContainer = styled.div`
             }
         }
     }
+    @media screen and (min-width: 1025px) {
+        height: 30rem;
+        button {
+            top: 375px;
+
+        }
+    
+  }
     `;
 
 export const Footer = styled.div`
