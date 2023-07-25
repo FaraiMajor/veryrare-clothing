@@ -21,7 +21,7 @@ export const BannerContainer = styled.div`
     @media screen and (max-width: 800px) {
        padding: 0;
     }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 1600px) {
         height: 35rem;
         
       }
@@ -121,7 +121,7 @@ export const CategoryBodyContainer = styled.div`
             width: 350px
         }
   }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 1600px) {
         padding-left: 0;
         h2 {
             width: 700px;
