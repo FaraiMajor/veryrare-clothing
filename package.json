@@ -45,7 +45,6 @@
     "stripe": "^12.11.0",
     "styled-components": "^5.3.11",
     "swiper": "^9.3.2",
-    "typescript": "^5.1.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

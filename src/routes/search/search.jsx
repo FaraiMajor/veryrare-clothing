@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { selectCategoriesMap } from '../../store/categories/categories.selector';
@@ -25,7 +25,7 @@ const Search = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleSearch = () => {
+    const handleSearch = useCallback(() => {
         const results = [];
 
         // Iterate through each category in the categoriesMap
@@ -43,7 +43,7 @@ const Search = () => {
 
         setSearchResults(results);
         // navigate('/search-results', { state: { searchResults, searchTerm } });
-    };
+    }, [categoriesMap, searchTerm]);
 
     useEffect(() => {
         if (searchTerm || searchResults.length > 0) {
@@ -63,6 +63,7 @@ const Search = () => {
             setIsOpen(false);
         }
     };
+
     useEffect(() => {
         if (searchTerm) {
             // Delay the search execution after a short interval (e.g., 300ms) to prevent immediate search on each key press
@@ -73,10 +74,9 @@ const Search = () => {
                 clearTimeout(timeoutId);
             };
         }
-    }, [searchTerm]);
+    }, [searchTerm, handleSearch]);
 
     return (
-
         <SearchContainer>
             <Icon onClick={handleToggleDropdown}>
                 <svg viewBox="0 0 512 512" class="ionicon" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +93,6 @@ const Search = () => {
                                 <path d="M46.599 46.599a4.498 4.498 0 0 1-6.363 0l-7.941-7.941C29.028 40.749 25.167 42 21 42 9.402 42 0 32.598 0 21S9.402 0 21 0s21 9.402 21 21c0 4.167-1.251 8.028-3.342 11.295l7.941 7.941a4.498 4.498 0 0 1 0 6.363zM21 6C12.717 6 6 12.714 6 21s6.717 15 15 15c8.286 0 15-6.714 15-15S29.286 6 21 6z">
                                 </path>
                             </SearchIcon>
-
                             <InputField
                                 type='text'
                                 value={searchTerm}
@@ -107,7 +106,6 @@ const Search = () => {
                 </>
             )}
         </SearchContainer>
-
     );
 };
 

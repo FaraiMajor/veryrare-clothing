@@ -36,12 +36,12 @@ export default function Slider() {
                 modules={[Autoplay]}
                 className="mySwiper"
             >
-                <SwiperSlide className="swiper"><img className="img" src={Banner1} /></SwiperSlide>
-                <SwiperSlide className="swiper"><img className="img" src={Banner2} /></SwiperSlide>
-                <SwiperSlide className="swiper"><img className="img" src={Banner3} /></SwiperSlide>
-                <SwiperSlide className="swiper"><img className="img" src={Banner4} /></SwiperSlide>
-                <SwiperSlide className="swiper"><img className="img" src={Banner5} /></SwiperSlide>
-                <SwiperSlide className="swiper"><img className="img" src={Banner6} /></SwiperSlide>
+                <SwiperSlide className="swiper"><img className="img" src={Banner1} alt="" /></SwiperSlide>
+                <SwiperSlide className="swiper"><img className="img" src={Banner2} alt="" /></SwiperSlide>
+                <SwiperSlide className="swiper"><img className="img" src={Banner3} alt="" /></SwiperSlide>
+                <SwiperSlide className="swiper"><img className="img" src={Banner4} alt="" /></SwiperSlide>
+                <SwiperSlide className="swiper"><img className="img" src={Banner5} alt="" /></SwiperSlide>
+                <SwiperSlide className="swiper"><img className="img" src={Banner6} alt="" /></SwiperSlide>
             </Swiper>
         </>
     );
