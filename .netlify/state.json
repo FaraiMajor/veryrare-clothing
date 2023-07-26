@@ -1,0 +1,19 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Flushing",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "NY",
+				"name": "New York"
+			},
+			"timezone": "America/New_York",
+			"latitude": 40.6758,
+			"longitude": -73.8163
+		},
+		"timestamp": 1688702219185
+	}
+}

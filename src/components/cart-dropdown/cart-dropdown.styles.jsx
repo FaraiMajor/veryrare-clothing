@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
-import Button from '../button/button';
+import {
+    BaseButton,
+    InvertedButton,
+} from '../button/button.styles';
 
 export const CartDropdownContainer = styled.div`
     position: absolute;
-    width: 400px;
+    width: 360px;
     height: 450px;
     display: flex;
     flex-direction: column;
@@ -14,11 +17,19 @@ export const CartDropdownContainer = styled.div`
     border-bottom-right-radius: 5px;
     background-color: white;
     top: 80px;
-    right: 10px;
+    right: 0px;
     z-index: 5;
-    ${Button} {
+    ${BaseButton},
+    ${InvertedButton} {
         margin-top: auto;
       }
+
+      @media screen and (max-width: 800px) {
+        top: 90px;
+        right: 0px;
+        
+      }
+
     `;
 
 export const CartItems = styled.div`

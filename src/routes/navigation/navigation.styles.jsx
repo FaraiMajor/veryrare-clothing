@@ -9,6 +9,10 @@ export const NavigationContainer = styled.div`
     align-items: center;
     padding: 5px 0px;
     margin: 0px 0 5px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    background-color: white;
     border-bottom: solid rgb(192, 190, 190) 0.1px;
 
     @media screen and (max-width: 800px) {
@@ -21,7 +25,6 @@ export const NavigationContainer = styled.div`
 `;
 export const LogoContainer = styled(Link)`
         height: 100%;
-        width: 70px;
         padding: 15px;
         display: flex;
         text-decoration: none;
@@ -29,17 +32,22 @@ export const LogoContainer = styled(Link)`
 
         .logo {
             width: 80%;
+            display: none;
         }
 
         .logo-text {
-            font-size: 1.3rem;
+            font-size: 2rem;
             font-weight: 600;
+            letter-spacing: 15px;
             color: black
         }
 
         @media screen and (max-width: 800px) {
-
             .logo-text{
+                font-size: 1rem;
+                letter-spacing: 5px;
+            }
+            .logo {
                 display: none;
             }
           }
@@ -52,6 +60,11 @@ export const NavLinks = styled.div`
         justify-content: flex-end;
         text-align: center;
         font-weight: 600;
+
+        @media screen and (max-width: 800px) {
+            padding-right: 15px;
+        }
+
 `;
 
 export const NavLink = styled(Link)`
@@ -79,4 +92,9 @@ export const NavLink = styled(Link)`
             width: 100%;
             left: 0;
         }
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
 `;
+export const BurgerSearch = styled.div`
+        `;

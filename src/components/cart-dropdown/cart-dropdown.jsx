@@ -17,15 +17,22 @@ import {
 } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
-    const { cartItems, cartTotal } = useContext(CartContext);
+    const { cartItems, cartTotal, isCartOpen, setIsCartOpen } = useContext(CartContext);
     const navigate = useNavigate();
 
     const goToCheckoutHandler = () => {
         navigate('/checkout');
     };
+    const handleMouseEnter = () => setIsCartOpen(isCartOpen);
+
+    const handleMouseLeave = () => setIsCartOpen(!isCartOpen);
+
 
     return (
-        <CartDropdownContainer>
+        <CartDropdownContainer
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <CartItems>
                 {cartItems.length ? (
                     cartItems.map((cartItem) => (

@@ -19,17 +19,14 @@ const addCartItem = (cartItems, productToAdd) => {
 };
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
-    // find the cart item to remove
     const existingCartItem = cartItems.find(
         (cartItem) => cartItem.id === cartItemToRemove.id
     );
 
-    // check if quantity is equal to 1, if it is remove that item from the cart
     if (existingCartItem.quantity === 1) {
         return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
     }
 
-    // return back cartitems with matching cart item with reduced quantity
     return cartItems.map((cartItem) =>
         cartItem.id === cartItemToRemove.id
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
@@ -47,6 +44,7 @@ export const CartContext = createContext({
     addItemToCart: () => { },
     removeItemFromCart: () => { },
     clearItemFromCart: () => { },
+    clearCart: () => { }, // Adding clearCart to the initial context
     cartCount: 0,
     cartTotal: 0,
 });
@@ -56,6 +54,7 @@ const CART_ACTION_TYPES = {
     SET_CART_ITEMS: 'SET_CART_ITEMS',
     SET_CART_COUNT: 'SET_CART_COUNT',
     SET_CART_TOTAL: 'SET_CART_TOTAL',
+    CLEAR_CART: 'CLEAR_CART', // Adding the new action type for clearing the cart
 };
 
 const INITIAL_STATE = {
@@ -73,6 +72,13 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 ...payload,
+            };
+        case CART_ACTION_TYPES.CLEAR_CART: // Handling the new action type to clear the cart
+            return {
+                ...state,
+                cartItems: [],
+                cartCount: 0,
+                cartTotal: 0,
             };
         default:
             throw new Error(`Unhandled type ${type} in cartReducer`);
@@ -112,7 +118,7 @@ export const CartProvider = ({ children }) => {
         updateCartItemsReducer(newCartItems);
     };
 
-    const removeItemToCart = (cartItemToRemove) => {
+    const removeItemFromCart = (cartItemToRemove) => {
         const newCartItems = removeCartItem(cartItems, cartItemToRemove);
         updateCartItemsReducer(newCartItems);
     };
@@ -122,12 +128,18 @@ export const CartProvider = ({ children }) => {
         updateCartItemsReducer(newCartItems);
     };
 
+    const clearCart = () => {
+        const newCartItems = [];
+        updateCartItemsReducer(newCartItems);
+    };
+
     const value = {
         isCartOpen,
         setIsCartOpen,
         addItemToCart,
-        removeItemToCart,
+        removeItemFromCart,
         clearItemFromCart,
+        clearCart,
         cartItems,
         cartCount,
         cartTotal,
