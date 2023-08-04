@@ -42,5 +42,4 @@ export const PaymentButton = styled(BaseButton)`
     background-color: white;
     color: black;
     border: 1px solid black;
-    border
 `;
